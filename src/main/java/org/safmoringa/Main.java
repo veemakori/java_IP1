@@ -46,10 +46,10 @@ public class Main {
             System.out.println("Your Ceaser Cipher Program is Processing...");
             System.out.println(mainObject.getProcess());
             if (mainObject.getProcess().startsWith("e")){
-                String output = Encoding.encode(mainObject.getMessage(), mainObject.getKey());
+                String output = Encode.encrypt(mainObject.getMessage(), mainObject.getKey());
                 System.out.println(output);
             } else if (mainObject.getProcess().startsWith("d")) {
-                String output = Decoding.decode(mainObject.getMessage(), mainObject.getKey());
+                String output = Decode.decrypt(mainObject.getMessage(), mainObject.getKey());
                 System.out.println(output);
             } else {
                 System.out.println("Your process is Invalid");
