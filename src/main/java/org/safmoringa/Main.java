@@ -33,10 +33,9 @@ public class Main {
         Scanner userInputObject = new Scanner(System.in);
         Main mainObject = new Main();
         do {
-            System.out.println("Select the Process: (e-encode/d-decode:");
+            System.out.println("Select the Process: (encode or decode:");
             mainObject.setProcess(userInputObject.nextLine());
-            System.out.println("Enter Your Message:for Encoding; THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG\n" +
-                    "Decoding; QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD");
+            System.out.println("Enter Your Message:for Encoding; ");
             mainObject.setMessage(userInputObject.nextLine());
 
             System.out.println("Enter Any key: From 0 - 25\n"
@@ -52,7 +51,7 @@ public class Main {
                 String output = Decode.decrypt(mainObject.getMessage(), mainObject.getKey());
                 System.out.println(output);
             } else {
-                System.out.println("Your process is Invalid");
+                System.out.println("The value entered is Invalid");
                 continue;
             }
             System.out.println("Do you want to quit or continue the program");
