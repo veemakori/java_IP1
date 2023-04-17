@@ -33,22 +33,26 @@ public class Main {
         Scanner userInputObject = new Scanner(System.in);
         Main mainObject = new Main();
         do {
-            System.out.println("Select the Process: (encode or decode:");
+            System.out.println("Select the Process: (encode or decode): ");
             mainObject.setProcess(userInputObject.nextLine());
-            System.out.println("Enter Your Message:for Encoding; ");
-            mainObject.setMessage(userInputObject.nextLine());
 
-            System.out.println("Enter Any key: From 0 - 25\n"
-                    + "eg 23 for encoding and decoding THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG");
-            mainObject.setKey(userInputObject.nextInt());
-
-            System.out.println("Your Ceaser Cipher Program is Processing...");
-            System.out.println(mainObject.getProcess());
             if (mainObject.getProcess().startsWith("e")){
+                System.out.println("Enter Your Message:for Encoding; ");
+                mainObject.setMessage(userInputObject.nextLine());
+                System.out.println("Enter Any key: From 0 - 25: ");
+                mainObject.setKey(userInputObject.nextInt());
                 String output = Encode.encrypt(mainObject.getMessage(), mainObject.getKey());
+                System.out.println("Your Cipher message is Processing...");
+                System.out.println(mainObject.getProcess());
                 System.out.println(output);
             } else if (mainObject.getProcess().startsWith("d")) {
+                System.out.println("Enter Your Message:for decoding; ");
+                mainObject.setMessage(userInputObject.nextLine());
+                System.out.println("Enter Any key: From 0 - 25: ");
+                mainObject.setKey(userInputObject.nextInt());
                 String output = Decode.decrypt(mainObject.getMessage(), mainObject.getKey());
+                System.out.println("Your Cipher message is Processing...");
+                System.out.println(mainObject.getProcess());
                 System.out.println(output);
             } else {
                 System.out.println("The value entered is Invalid");
