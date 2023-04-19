@@ -3,19 +3,15 @@ package org.safmoringa;
 public class Decode {
     private static final String alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        public static String decrypt(String msg, int key){
-        StringBuilder output = new StringBuilder();
-        for(char c: msg.toCharArray()){
-            int charPos = alphabets.indexOf(c);
-            if (charPos == -1){
-                output.append(c);
-                continue;
+    public static String decrypt(String msg, int shift) {
+        StringBuilder decryptedMessage = new StringBuilder();
+        for (int i = 0; i < msg.length(); i++) {
+            char c = msg.charAt(i);
+            if (Character.isLetter(c)) {
+                c = (char) ((c - 'a' - shift + 26) % 26 + 'a');
             }
-            int tempNewPos = charPos - key;
-            int newPos = tempNewPos < 0 ? 26 + tempNewPos : tempNewPos;
-            char replacement = alphabets.charAt(newPos);
-            output.append(replacement);
+            decryptedMessage.append(c);
         }
-        return output.toString();
+        return decryptedMessage.toString();
     }
 }

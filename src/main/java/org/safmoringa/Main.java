@@ -33,23 +33,26 @@ public class Main {
         Scanner userInputObject = new Scanner(System.in);
         Main mainObject = new Main();
         do {
-            System.out.println("Select the Process: (encode or decode): ");
+            System.out.println("Select the Process either (e)to encode or (d)to decode): ");
             mainObject.setProcess(userInputObject.nextLine());
 
-            if (mainObject.getProcess().startsWith("e")){
-                System.out.println("Enter Your Message:for Encoding; ");
-                mainObject.setMessage(userInputObject.nextLine());
-                System.out.println("Enter Any key: From 0 - 25: ");
-                mainObject.setKey(userInputObject.nextInt());
+            System.out.println("Enter Your Message:for Encoding; ");
+            mainObject.setMessage(userInputObject.nextLine());
+
+            System.out.println("Enter Any key: From 0 - 25: ");
+            mainObject.setKey(userInputObject.nextInt());
+
+            if (mainObject.getMessage().startsWith("e")){
+
                 String output = Encode.encrypt(mainObject.getMessage(), mainObject.getKey());
                 System.out.println("Your Cipher message is Processing...");
                 System.out.println(mainObject.getProcess());
                 System.out.println(output);
-            } else if (mainObject.getProcess().startsWith("d")) {
-                System.out.println("Enter Your Message:for decoding; ");
-                mainObject.setMessage(userInputObject.nextLine());
-                System.out.println("Enter Any key: From 0 - 25: ");
-                mainObject.setKey(userInputObject.nextInt());
+            } else if (mainObject.getMessage().startsWith("d")) {
+//                System.out.println("Enter Your Message:for decoding; ");
+//                mainObject.setMessage(userInputObject.nextLine());
+//                System.out.println("Enter Any key: From 0 - 25: ");
+//                mainObject.setKey(userInputObject.nextInt());
                 String output = Decode.decrypt(mainObject.getMessage(), mainObject.getKey());
                 System.out.println("Your Cipher message is Processing...");
                 System.out.println(mainObject.getProcess());
