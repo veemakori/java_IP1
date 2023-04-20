@@ -36,7 +36,7 @@ public class Main {
             System.out.println("Select the Process either (e)to encode or (d)to decode): ");
             mainObject.setProcess(userInputObject.nextLine());
 
-            System.out.println("Enter Your Message:for Encoding; ");
+            System.out.println("Enter Your Message:for Encoding or decoding; ");
             mainObject.setMessage(userInputObject.nextLine());
 
             System.out.println("Enter Any key: From 0 - 25: ");

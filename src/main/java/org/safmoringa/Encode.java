@@ -5,6 +5,7 @@ public class Encode {
 
     public static String encrypt(String msg, int key){
         StringBuilder output = new StringBuilder();
+//        msg = msg.toUpperCase();
         for (int i = 0; i< msg.length(); i++)
         { char c = msg.charAt(i);
             if( Character.isLetter(c))
