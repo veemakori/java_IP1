@@ -42,20 +42,15 @@ public class Main {
             System.out.println("Enter Any key: From 0 - 25: ");
             mainObject.setKey(userInputObject.nextInt());
 
-            if (mainObject.getMessage().startsWith("e")){
+            if (mainObject.getProcess().startsWith("e")){
 
                 String output = Encode.encrypt(mainObject.getMessage(), mainObject.getKey());
-                System.out.println("Your Cipher message is Processing...");
-                System.out.println(mainObject.getProcess());
+                System.out.println("Your encoded message is Processing...");
                 System.out.println(output);
-            } else if (mainObject.getMessage().startsWith("d")) {
-//                System.out.println("Enter Your Message:for decoding; ");
-//                mainObject.setMessage(userInputObject.nextLine());
-//                System.out.println("Enter Any key: From 0 - 25: ");
-//                mainObject.setKey(userInputObject.nextInt());
+            } else if (mainObject.getProcess().startsWith("d")) {
+//
                 String output = Decode.decrypt(mainObject.getMessage(), mainObject.getKey());
-                System.out.println("Your Cipher message is Processing...");
-                System.out.println(mainObject.getProcess());
+                System.out.println("Your decoded message is Processing...");
                 System.out.println(output);
             } else {
                 System.out.println("The value entered is Invalid");
